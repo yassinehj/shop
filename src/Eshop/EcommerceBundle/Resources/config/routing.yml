@@ -1,0 +1,6 @@
+eshop_ecommerce_homepage:
+    path:     /
+    defaults: { _controller: EshopEcommerceBundle:Default:index }
+eshop_ecommerce_acceuil:
+    path:     /acceuil
+    defaults: { _controller: EshopEcommerceBundle:Default:acceuil }
