@@ -11,4 +11,5 @@ class EshopUserBundle extends Bundle
     {
         return 'FOSUserBundle';
     }
+
 }

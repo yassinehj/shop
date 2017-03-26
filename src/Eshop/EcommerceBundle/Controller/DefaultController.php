@@ -12,6 +12,8 @@ class DefaultController extends Controller
     }
     public function acceuilAction()
     {
-        return $this->render('EshopEcommerceBundle:Default:acceuil.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository('EshopUserBundle:Categorie')->findAll();
+        return $this->render('EshopEcommerceBundle:Default:acceuil.html.twig', array('categories' => $categories));
     }
 }

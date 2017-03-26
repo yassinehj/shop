@@ -1,0 +1,54 @@
+{% extends "@EshopUser/layoutAdmin.html.twig" %}
+
+{% block page_content %}
+    {{ parent() }}
+    <br><br>
+    <div class="page-content-wrap">
+        <div class="row">
+            <div class="col-md-12">
+                {#<form class="form-horizontal">#}
+                {{ form_start(form, {'method': 'post', 'attr': {'class': 'form-horizontal'}}) }}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Modifier sous-categorie</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="block">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Nom:</label>
+                                            {{ form_widget(form.nom,{ 'attr': {'class': 'form-control','placeholder' : 'Nom'} }) }}
+
+                                            {#<input type="text" class="form-control">#}
+                                        </div>
+                                        <div class="col-md-10">
+                                            <label>Description:</label>
+                                            {{ form_widget(form.categorie,{ 'attr': {'class': 'form-control','placeholder' : 'Description'} }) }}
+
+                                            {#<textarea class="form-control"></textarea>#}
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-default">Vider champs</button>
+                    <input type="submit" value="modifier" class="btn btn-primary pull-right"/>
+
+                    {#<button class="btn btn-primary pull-right">Submit</button>#}
+                </div>
+                {#</form>#}
+                {{ form_rest(form) }}
+                {{ form_end(form, {'render_rest': false}) }}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

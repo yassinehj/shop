@@ -1,6 +1,4 @@
-eshop_client_homepage:
-    path:     /
-    defaults: { _controller: EshopClientBundle:Default:index }
+
 eshop_client_compteClient:
     path:     /compteClient
     defaults: { _controller: EshopClientBundle:CompteClient:compteClient }

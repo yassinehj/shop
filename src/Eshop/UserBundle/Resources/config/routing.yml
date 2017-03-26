@@ -1,9 +1,32 @@
-eshop_user_homepage:
-    path:     /
-    defaults: { _controller: EshopUserBundle:Default:index }
-eshop_user_login:
-    path:     /login1
-    defaults: { _controller: EshopUserBundle:Default:login }
-eshop_user_acceuil:
+
+eshop_user_admin_acceuil:
     path:     /acceuilAdmin
     defaults: { _controller: EshopUserBundle:Admin:acceuil }
+
+#categories
+eshop_user_admin_list_categorie:
+    path:     /listcategorie
+    defaults: { _controller: EshopUserBundle:Admin:affichCategorie }
+eshop_user_admin_ajout_categorie:
+    path:     /ajoutcategorie
+    defaults: { _controller: EshopUserBundle:Admin:ajoutCategorie }
+eshop_user_admin_supprimer_categorie:
+    path:     /supprimercategorie
+    defaults: { _controller: EshopUserBundle:Admin:supprimerCategorie }
+eshop_user_admin_modifier_categorie:
+    path:     /modifiercategorie
+    defaults: { _controller: EshopUserBundle:Admin:modifierCategorie }
+
+#Souscategories
+eshop_user_admin_list_Souscategorie:
+    path:     /listSouscategorie
+    defaults: { _controller: EshopUserBundle:Admin:affichSousCategorie }
+eshop_user_admin_ajout_Souscategorie:
+    path:     /ajoutSouscategorie
+    defaults: { _controller: EshopUserBundle:Admin:ajoutSousCategorie }
+eshop_user_admin_supprimer_Souscategorie:
+    path:     /supprimerSouscategorie
+    defaults: { _controller: EshopUserBundle:Admin:supprimerSousCategorie }
+eshop_user_admin_modifier_Souscategorie:
+    path:     /modifierSouscategorie
+    defaults: { _controller: EshopUserBundle:Admin:modifierSousCategorie }
