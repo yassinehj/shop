@@ -1,0 +1,70 @@
+{% extends "@EshopUser/layoutAdmin.html.twig" %}
+
+{% block page_content %}
+    {{ parent() }}
+<br><br>
+        <center><h2><b>ARTICLES</b></h2></center>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <a href="{{ path('eshop_user_admin_ajout_article') }}"><button class="btn btn-info" style="margin-right: 50px"><span class="fa fa-plus-square" style="color: #ffffff"></span>
+                            <span class="xn-text" style="color: #ffffff">Ajouter</span></button></a>
+
+                </div>
+
+                <div class="panel-body panel-body-table">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-actions">
+                            <thead>
+                            <tr>
+
+                                <th>name</th>
+                                <th>prix</th>
+                                <th>promotion</th>
+                                <th>Quantité</th>
+                                <th>Image</th>
+                                <th>Sous-catégorie</th>
+                                <th>Description</th>
+                                <th></th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for article in articles %}
+                            <tr>
+
+                                <td><strong>{{ article.nomArticle }}</strong></td>
+                                <td>{{ article.prix }}</td>
+                                <td>{{ article.promotion }}</td>
+                                <td>{{ article.quantite }}</td>
+                                <td><img
+                                            src="{{ asset(article.image.webPath) }}"
+                                            alt="{{ article.image.alt }}"
+
+                                    /></td>
+                                <td>{{ article.sousCategorie.nom }}</td>
+                                <td>{{ article.description }}</td>
+                                {#<td>#}
+                                    {#<a href="{{ path('eshop_user_admin_modifier_categorie',{'id':categorie.id}) }}">#}
+                                    {#<button class="btn btn-default btn-rounded btn-sm"><span class="fa fa-pencil"></span></button></a>#}
+
+                                {#<a href="{{ path('eshop_user_admin_supprimer_categorie',{'id':categorie.id}) }}">#}
+                                    {#<button class="btn btn-danger btn-rounded btn-sm"><span class="fa fa-times"></span></button></a>#}
+                                {#</td>#}
+                            </tr>
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

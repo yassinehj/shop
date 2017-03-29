@@ -2,8 +2,10 @@
 
 namespace Eshop\UserBundle\Controller;
 
+use Eshop\UserBundle\Entity\Article;
 use Eshop\UserBundle\Entity\Categorie;
 use Eshop\UserBundle\Entity\SousCategorie;
+use Eshop\UserBundle\Form\ArticleType;
 use Eshop\UserBundle\Form\CategorieType;
 use Eshop\UserBundle\Form\SousCategorieType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -117,6 +119,26 @@ class AdminController extends Controller
         }
         return $this->render('@EshopUser/Admin/gestionSousCategorie/modifierSousCategorie.html.twig',
             array('form' => $form->createView()));
+    }
+    public function ajoutArticleAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $article=new Article();
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            $em->persist($article);
+            $em->flush();
+            return $this->redirectToRoute('eshop_user_admin_ajout_article');
+        }
+        return $this->render('@EshopUser/Admin/gestionArticle/ajoutArticle.html.twig',
+            array('form' => $form->createView()));
+    }
+    public function affichArticleAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository('EshopUserBundle:Article')->findAll();
+        return $this->render('@EshopUser/Admin/gestionArticle/afficherArticle.html.twig', array('articles' => $articles));
+
     }
 
 }

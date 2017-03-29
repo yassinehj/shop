@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="icon" href="{{ asset('bundles/eshop.png') }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ asset('bundles/logo.png') }}" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" id="theme" href="{{ asset('bundles/eshopuser/css/theme-default.css') }}"/>
 </head>
 <body>
@@ -35,22 +35,33 @@
                 </div>
             </li>
             <li class="xn-title">Navigation</li>
-
+            {% if app.request.get('_route') == "eshop_user_admin_acceuil" %}
+            <li class="active">
+                {% else %}
             <li>
-
-                <a href="#"><span class="fa fa-home"></span> <span class="xn-text">Acceuil</span></a>
+                {% endif %}
+                <a href="{{ path('eshop_user_admin_acceuil') }}"><span class="fa fa-home"></span> <span class="xn-text">Acceuil</span></a>
             </li>
-            <li class="xn-openable">
-                <a href="{{ path('eshop_user_admin_list_categorie') }}"><span class="fa fa-table"></span> <span class="xn-text">Catégorie</span></a>
-                <ul>
-                    <li><a href="{{ path('eshop_user_admin_list_Souscategorie') }}"><span class="fa fa-align-justify"></span> Sous Catégorie</a></li>
-                </ul>
-            </li>
-            {#<li>#}
-                {#<a href="{{ path('eshop_user_admin_list_categorie') }}"><span class="fa fa-users"></span> <span class="xn-text">Catégorie</span></a>#}
-            {#</li>#}
+            {% if app.request.get('_route') == "eshop_user_admin_list_categorie" %}
+            <li class="active">
+                {% else %}
             <li>
-                <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Article</span></a>
+                {% endif %}
+                <a href="{{ path('eshop_user_admin_list_categorie') }}"><span class="fa fa-list-ul"></span> <span class="xn-text">Catégorie</span></a>
+            </li>
+            {% if app.request.get('_route') == "eshop_user_admin_list_Souscategorie" %}
+            <li class="active">
+                {% else %}
+            <li>
+                {% endif %}
+                <a href="{{ path('eshop_user_admin_list_Souscategorie') }}"><span class="fa fa-list-ul"></span> <span class="xn-text">Sous Catégorie</span></a>
+            </li>
+            {% if app.request.get('_route') == "eshop_user_admin_affich_article" %}
+            <li class="active">
+                {% else %}
+            <li>
+                {% endif %}
+                <a href="{{ path('eshop_user_admin_affich_article') }}"><span class="fa fa-list-ul"></span> <span class="xn-text">Article</span></a>
             </li>
 
 

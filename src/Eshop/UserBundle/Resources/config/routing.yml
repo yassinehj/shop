@@ -30,3 +30,10 @@ eshop_user_admin_supprimer_Souscategorie:
 eshop_user_admin_modifier_Souscategorie:
     path:     /modifierSouscategorie
     defaults: { _controller: EshopUserBundle:Admin:modifierSousCategorie }
+#article
+eshop_user_admin_ajout_article:
+    path:     /ajoutArticle
+    defaults: { _controller: EshopUserBundle:Admin:ajoutArticle }
+eshop_user_admin_affich_article:
+    path:     /affichArticle
+    defaults: { _controller: EshopUserBundle:Admin:affichArticle }

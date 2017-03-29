@@ -1,0 +1,70 @@
+{% extends "@EshopUser/layoutAdmin.html.twig" %}
+
+{% block page_content %}
+    {{ parent() }}
+    <br><br>
+    <div class="page-content-wrap">
+        <div class="row">
+            <div class="col-md-12">
+                {#<form class="form-horizontal">#}
+                {{ form_start(form, {'method': 'post', 'attr': {'class': 'form-horizontal'}}) }}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Ajouter article</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="block">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <label>Nom Article:</label>
+                                            {{ form_widget(form.nomArticle,{ 'attr': {'class': 'form-control','placeholder' : 'Nom Article'} }) }}
+                                        </div>
+                                        <div class="col-md-10">
+                                            <label>Prix:</label>
+                                            {{ form_widget(form.prix,{ 'attr': {'class': 'form-control','placeholder' : 'prix'} }) }}
+                                        </div>
+                                        <div class="col-md-10">
+                                            <label>promotion:</label>
+                                            {{ form_widget(form.promotion,{ 'attr': {'class': 'form-control','placeholder' : 'promotion'} }) }}
+                                        </div>
+                                        <div class="col-md-10">
+                                            <label>quantité:</label>
+                                            {{ form_widget(form.quantite,{ 'attr': {'class': 'form-control','placeholder' : 'quantité'} }) }}
+                                        </div>
+                                        <div class="col-md-10">
+                                            <label>Image:</label>
+                                            {{ form_widget(form.image) }}
+                                        </div>
+                                        <div class="col-md-10">
+                                            <label>Sous catégorie:</label>
+                                            {{ form_widget(form.sousCategorie,{ 'attr': {'class': 'form-control select','placeholder' : 'Sous catégorie'} }) }}
+                                        </div>
+                                        <div class="col-md-10">
+                                            <label>Description:</label>
+                                            {{ form_widget(form.description,{ 'attr': {'class': 'form-control select','placeholder' : 'Description'} }) }}
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-default">Clear Form</button>
+                    <input type="submit" value="ajouter" class="btn btn-primary pull-right"/>
+
+                    {#<button class="btn btn-primary pull-right">Submit</button>#}
+                </div>
+                {#</form>#}
+                {{ form_rest(form) }}
+                {{ form_end(form, {'render_rest': false}) }}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

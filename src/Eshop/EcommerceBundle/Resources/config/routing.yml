@@ -4,3 +4,6 @@ eshop_ecommerce_homepage:
 eshop_ecommerce_acceuil:
     path:     /acceuil
     defaults: { _controller: EshopEcommerceBundle:Default:acceuil }
+eshop_ecommerce_article_by_souscategorie:
+    path:     /articleSouscategoie
+    defaults: { _controller: EshopEcommerceBundle:Default:articleBySouscategorie }
